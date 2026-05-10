@@ -8,9 +8,11 @@ class Registration_Locators: #Страница "Регистации"
     #Поле пароль
     PASSWORD_FIELD = (By.XPATH, ".//input[@type='password']")
     #Кнопка "Зарегистрироваться"
-    REGISTER_BUTTON = (By.CSS_SELECTOR, "button_button__33qZ0.button_button_type_primary__1O7Bx.button_button_size_medium__3zxIa")
+    REGISTER_BUTTON = (By.XPATH, ".//button[text() ='Зарегистрироваться']")
     #Ссылка на страницу логин
     LINK_LOGIN = (By.CSS_SELECTOR, "a.Auth_link__1fOlj")
+    #Сообщение "Некорректный пароль"
+    INCORRECT_PASSWORD = (By.CSS_SELECTOR, 'p.input__error.text_type_main-default')
     
 class Login_Locators: #Страница "Личный кабинет"
     #Поле Email
@@ -18,7 +20,7 @@ class Login_Locators: #Страница "Личный кабинет"
     #Поле пароль
     PASSWORD_FIELD = (By.XPATH, ".//input[@type='password']")
     #Кнопка "Войти"
-    LOGIN_BUTTON = (By.CSS_SELECTOR, ".button_button__33qZ0.button_button_type_primary__1O7Bx.button_button_size_medium__3zxIa")
+    LOGIN_BUTTON = (By.XPATH, ".//button[text() ='Войти']")
     #Кнопка "Конструктор"
     CONSTRUCTOR_BUTTON = (By.XPATH, ".//p[text()='Конструктор']")
     #Логотип "Stellar Burgers"
@@ -27,10 +29,8 @@ class Login_Locators: #Страница "Личный кабинет"
     LINK_REGISTRATION = (By.XPATH, ".//a[@href='/register']")
     #Ссылка на страницу "Восстановления пароля"
     LINK_FOGOT_PASSWORD = (By.XPATH, ".//a[@href='/forgot-password']")
-    #Сообщение "Некорректный пароль"
-    INCORRECT_PASSWORD = (By.CSS_SELECTOR, 'p.input__error.text_type_main-default')
-
-class Fogot_Locators: #Страница "Восстановление пароля"
+    
+class Forgot_Locators: #Страница "Восстановление пароля"
     #Ссылка в "Личный кабинет"
     LINK_LOGIN = (By.CSS_SELECTOR, "a.Auth_link__1fOlj")
 
@@ -41,7 +41,7 @@ class Profile_Locators: #Страница "Личного Кабинета"
 class Main_Locators: #Гланое страница конструктор
     #Кнопка "Личный кабинет"
     PERSONAL_ACCOUNT_BUTTON = (By.XPATH, ".//a[@href='/account']")
-    #Кнопка "Войти"
+    #Кнопка "Войти в аккаунт"
     LOGIN_ACCAUNT_BUTTON = (By.CSS_SELECTOR, 'button.button_button__33qZ0.button_button_type_primary__1O7Bx.button_button_size_large__G21Vg')
     #Кнопка "Булки"
     BUNS_BUTTON = (By.XPATH, ".//span[text()='Булки']")
@@ -49,4 +49,6 @@ class Main_Locators: #Гланое страница конструктор
     SAUCES_BUTTON = (By.XPATH, ".//span[text()='Соусы']")
     #Кнопка "Начинки"
     FILLINGS_BUTTON = (By.XPATH, ".//span[text()='Начинки']")
+    #Кнопка "Оформить заказ"
+    ORDER_BUTTON = (By.XPATH, ".//button[text()='Оформить заказ']")
     
