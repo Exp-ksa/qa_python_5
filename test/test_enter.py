@@ -1,7 +1,7 @@
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-from ..locators import Registration_Locators, Login_Locators, Forgot_Locators, Profile_Locators, Main_Locators
+from ..locators import Registration_Locators, Login_Locators, Forgot_Locators, Main_Locators
 from ..data import Credentials
 
 

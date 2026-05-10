@@ -36,7 +36,7 @@ class Forgot_Locators: #Страница "Восстановление паро�
 
 class Profile_Locators: #Страница "Личного Кабинета"
     #Кнопка "Выход"
-    EXIT_BUTTON = (By.CSS_SELECTOR, "Account_button__14Yp3.text.text_type_main-medium.text_color_inactive")
+    EXIT_BUTTON = (By.XPATH, ".//button[@type = 'button' and text()='Выход']")
 
 class Main_Locators: #Гланое страница конструктор
     #Кнопка "Личный кабинет"
@@ -45,10 +45,16 @@ class Main_Locators: #Гланое страница конструктор
     LOGIN_ACCAUNT_BUTTON = (By.CSS_SELECTOR, 'button.button_button__33qZ0.button_button_type_primary__1O7Bx.button_button_size_large__G21Vg')
     #Кнопка "Булки"
     BUNS_BUTTON = (By.XPATH, ".//span[text()='Булки']")
+    #Наименование "Булки" в списке булок
+    BUNS_TEXT = (By.XPATH, ".//h2[text()= 'Булки']")
     #Кнопка "Соусы"
     SAUCES_BUTTON = (By.XPATH, ".//span[text()='Соусы']")
+    #Наименование "Соусы" в списке булок
+    SAUCES_TEXT = (By.XPATH, ".//h2[text()= 'Соусы']")
     #Кнопка "Начинки"
     FILLINGS_BUTTON = (By.XPATH, ".//span[text()='Начинки']")
+    #Наименование "Начинки" в списке булок
+    FILLINGS_TEXT = (By.XPATH, ".//h2[text()= 'Начинки']")
     #Кнопка "Оформить заказ"
     ORDER_BUTTON = (By.XPATH, ".//button[text()='Оформить заказ']")
     
