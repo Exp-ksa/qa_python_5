@@ -2,7 +2,7 @@ from ..generate_credentials import generate_random_credentials
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-from ..locators import Registration_Locators, Login_Locators
+from locators import Registration_Locators, Login_Locators
 
 class TestRegister:
     def test_register(self, register_page):

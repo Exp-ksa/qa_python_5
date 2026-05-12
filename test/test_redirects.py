@@ -1,7 +1,7 @@
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-from ..locators import Login_Locators, Main_Locators
+from locators import Login_Locators, Main_Locators
 
 class TestRedirects:
 

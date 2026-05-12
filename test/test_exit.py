@@ -1,8 +1,8 @@
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-from ..locators import Login_Locators, Main_Locators, Profile_Locators
-from ..data import Credentials
+from locators import Login_Locators, Main_Locators, Profile_Locators
+from data import Credentials
 
 class TestExit:
     def test_logout_by_exit_button_in_profile(self, login_page):

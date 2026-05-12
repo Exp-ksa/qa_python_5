@@ -1,46 +1,30 @@
+import pytest
+
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-from ..locators import Main_Locators
+from locators import Main_Locators
 
 class TestConstuctor:
-    def test_sauces_section_click_opens_sauces(self, main_page):
+
+    @pytest.mark.parametrize('button, find, ingredients', 
+                             [
+                                 [Main_Locators.SAUCES_BUTTON,Main_Locators.SAUCES_TEXT,'Соусы'], 
+                                 [Main_Locators.FILLINGS_BUTTON, Main_Locators.FILLINGS_TEXT,'Начинки'],
+                                 [Main_Locators.BUNS_BUTTON, Main_Locators.BUNS_TEXT, 'Булки']
+                             ])
+    def test_ingredients_section_click_opens_ingredients(self, main_page, button, find, ingredients):
         
         driver = main_page
-        driver.find_element(*Main_Locators.SAUCES_BUTTON).click()
-
-        sauces = driver.find_element(*Main_Locators.SAUCES_TEXT)
-        driver.execute_script("arguments[0].scrollIntoView();", sauces) 
+        if button == Main_Locators.BUNS_BUTTON:
+            driver.find_element(*Main_Locators.FILLINGS_TEXT).click()
+            WebDriverWait(driver, 10).until(EC.visibility_of_element_located(Main_Locators.FILLINGS_TEXT))
+            
+        driver.find_element(*button).click()
         
-        WebDriverWait(driver, 10).until(EC.visibility_of_element_located(Main_Locators.SAUCES_TEXT))
-
-        assert sauces.text == 'Соусы'
-
-    def test_fillings_section_click_opens_fillings(self, main_page):
+        element = driver.find_element(*find)
+        driver.execute_script("arguments[0].scrollIntoView();", element) 
         
-        driver = main_page
-        driver.find_element(*Main_Locators.FILLINGS_BUTTON).click()
+        WebDriverWait(driver, 10).until(EC.visibility_of_element_located(find))
 
-        fillings = driver.find_element(*Main_Locators.FILLINGS_TEXT)
-        driver.execute_script("arguments[0].scrollIntoView();", fillings)
-
-        WebDriverWait(driver, 10).until(EC.visibility_of_element_located(Main_Locators.FILLINGS_TEXT))
-
-        assert fillings.text == 'Начинки'
-
-    def test_buns_section_click_opens_buns(self, main_page):
-        
-        driver = main_page
-        driver.find_element(*Main_Locators.FILLINGS_BUTTON).click()
-        
-        fillings = driver.find_element(*Main_Locators.FILLINGS_TEXT)
-        driver.execute_script("arguments[0].scrollIntoView();", fillings)
-
-        WebDriverWait(driver, 10).until(EC.visibility_of_element_located(Main_Locators.FILLINGS_TEXT))
-
-        driver.find_element(*Main_Locators.BUNS_BUTTON).click()
-        buns = driver.find_element(*Main_Locators.BUNS_TEXT)
-        driver.execute_script("arguments[0].scrollIntoView();", buns)
-        WebDriverWait(driver, 10).until(EC.visibility_of_element_located(Main_Locators.BUNS_TEXT))
-
-        assert buns.text == 'Булки'
+        assert element.text == ingredients
