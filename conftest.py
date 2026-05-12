@@ -10,10 +10,8 @@ from data import Credentials
 @pytest.fixture(scope="function")
 def driver():
     options = Options()
-    #options.add_argument("--window-size=1920,1080") #Запуск в разрешении 1920*1080
     options.add_argument('--start-maximized') 
     options.add_argument('--disable-popup-blocking')  # Отключить блокировку всплывающих окон
-    #options.add_argument("--headless")  # Запуск в headless режиме, если нужно
     driver = webdriver.Chrome(options=options)
 
     driver.implicitly_wait(5)
