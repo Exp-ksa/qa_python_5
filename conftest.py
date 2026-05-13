@@ -3,8 +3,6 @@ from selenium.webdriver.chrome.options import Options # Chrome
 import pytest
 
 from url import REGISTER_URL, LOGIN_URL, FORGOT_URL, MAIN_URL 
-from locators import Login_Locators
-from data import Credentials
 
 
 @pytest.fixture(scope="function")
