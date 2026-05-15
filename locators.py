@@ -2,9 +2,9 @@ from selenium.webdriver.common.by import By
 
 class Registration_Locators: #Страница "Регистации"
     #Поле имя
-    NAME_FIELD = (By.XPATH, ".//label[text()='Имя']/following-sibling::input[@type='text']")
+    NAME_FIELD = (By.XPATH, ".//div[contains(@class,'input_type_text')]/label[text()='Имя']")
     #Поле Email
-    EMAIL_FIELD = (By.XPATH, ".//label[text()='Email']/following-sibling::input[@type='text']")
+    EMAIL_FIELD = (By.XPATH, ".//div[contains(@class,'input_type_text')]/label[text()='Email']")
     #Поле пароль
     PASSWORD_FIELD = (By.XPATH, ".//input[@type='password']")
     #Кнопка "Зарегистрироваться"
@@ -16,7 +16,7 @@ class Registration_Locators: #Страница "Регистации"
     
 class Login_Locators: #Страница "Личный кабинет"
     #Поле Email
-    EMAIL_FIELD = (By.XPATH, ".//label[text()='Email']/following-sibling::input[@type='text']")
+    EMAIL_FIELD = (By.XPATH, ".//div[contains(@class,'input_type_text')]/label[text()='Email']")
     #Поле пароль
     PASSWORD_FIELD = (By.XPATH, ".//input[@type='password']")
     #Кнопка "Войти"
