@@ -1,4 +1,4 @@
-from ..generate_credentials import generate_random_credentials
+from generate_credentials import generate_random_credentials
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
